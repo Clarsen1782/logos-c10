@@ -15,7 +15,7 @@ inquirer
             message: 'Enter a color for text with a keyword or hexadecimal number:',
         },
         {
-            type: 'checkbox',
+            type: 'list',
             name: 'shape',
             message: 'Pick shape for Logo:',
             choices: ['Circle', 'Triangle', 'Square']
@@ -25,7 +25,34 @@ inquirer
             name: 'color2',
             message: 'Enter a color for shape background with a keyword or hexadecimal number:',
         },
-    ]);
+    ])   
+        .then((answers) => {
+            const svg = new SVG();
+            svg.setTextElement(answers.text, answers.color);
+
+            switch(answers.shape) {
+                case 'Triangle':
+                  const triangle = new Triangle();
+                  triangle.setColor(answers.color2);
+                  svg.setShapeElement(triangle);
+                  break;
+                case 'Square':
+                    const square = new Square();
+                    square.setColor(answers.color2);
+                    svg.setShapeElement(square);
+                  break;
+                case "Circle":
+                  const circle = new Circle();
+                  circle.setColor(answers.color2);
+                  svg.setShapeElement(circle);
+                  break;  
+                default:
+                  console.log('Invalid Shape Selection');
+              }
+            const svgRep = svg.render();
+            console.log(svgRep);  
+        })
+    
   
     class SVG {
         constructor() {
