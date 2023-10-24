@@ -25,6 +25,12 @@ inquirer
             name: 'color2',
             message: 'Enter a color for shape background with a keyword or hexadecimal number:',
         },
+        {
+            type: 'input',
+            name: 'filename',
+            message: 'Enter file name:',
+            default: 'logo.svg',
+        }
     ])   
         .then((answers) => {
             const svg = new SVG();
@@ -48,9 +54,11 @@ inquirer
                   break;  
                 default:
                   console.log('Invalid Shape Selection');
+                  return;
               }
             const svgRep = svg.render();
-            console.log(svgRep);  
+            fs.writeFile(answers.filename, svgRep);
+            console.log(`SVG saved to ${answers.filename}`);  
         })
     
   
@@ -66,6 +74,6 @@ inquirer
             this.textElement = `<text x="100" y="75" font-size="50" text-anchor="middle" fill="${color}">${text}</text>`;
         }
         setShapeElement(shape) {
-            this.setShapeElement = shape.render()
+            this.shapeElement = shape.render()
         }
     }

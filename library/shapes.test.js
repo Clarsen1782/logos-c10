@@ -8,7 +8,7 @@ describe('Triangle', () => {
     it('should render a valid SVG representation of a triangle', () => {
         const triangle = new Triangle();
         const svgRep = triangle.render();
-        expect(svgRep).toMatch(<polygon points="150, 18 244, 182 56, 182" fill="${this.color}" />)
+        expect(svgRep).toMatch(polygon points="150, 18 244, 182 56, 182" fill="${this.color}")
     });
 });
 
@@ -20,7 +20,7 @@ describe('Square', () => {
     it('should render a valid SVG representation of a square', () => {
         const square = new Square();
         const svgRep = square.render();
-        expect(svgRep).toMatch(<rect width="200" height="200" fill="${this.color}" />)
+        expect(svgRep).toMatch(rect width="200" height="200" fill="${this.color}")
     });
 });
 
@@ -32,6 +32,6 @@ describe('Circle', () => {
     it('should render a valid SVG representation of a circle', () => {
         const circle = new Circle();
         const svgRep = circle.render();
-        expect(svgRep).toMatch(<circle cx="50" cy="50" r="50" fill="${this.color}" />)
+        expect(svgRep).toMatch(circle cx="50" cy="50" r="50" fill="${this.color}")
     });
 });
