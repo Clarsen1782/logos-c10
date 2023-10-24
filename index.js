@@ -7,28 +7,38 @@ inquirer
         {
             type: 'input',
             name: 'text',
-            message: 'Text for Logo? No more than 3 characters.',
+            message: 'Text for Logo? No more than 3 characters:',
         },
         {
             type: 'input',
             name: 'color',
-            message: 'What color for text?',
+            message: 'Enter a color for text with a keyword or hexadecimal number:',
         },
         {
             type: 'checkbox',
             name: 'shape',
-            message: 'Check shape for Logo',
-            choices: ['circle', 'triangle', 'square']
+            message: 'Pick shape for Logo:',
+            choices: ['Circle', 'Triangle', 'Square']
         },
         {
             type: 'input',
             name: 'color2',
-            message: 'What color for shape background?',
+            message: 'Enter a color for shape background with a keyword or hexadecimal number:',
         },
-    ])
-    .then((answers) => {
-        const logoContent = logo(answers);
-        fs.writeFile('logo.svg', logoContent, (err) =>
-        err ? console.log(err) : console.log('Generated logo.svg')
-        );
-    });
+    ]);
+  
+    class SVG {
+        constructor() {
+            this.textElement = ''
+            this.shapeElement = ''
+        }
+        render() {
+            return `<svg width="300" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">`
+        }
+        setTextElement(text,color) {
+            this.textElement = `<text x="100" y="75" font-size="50" text-anchor="middle" fill="${color}">${text}</text>`;
+        }
+        setShapeElement(shape) {
+            this.setShapeElement = shape.render()
+        }
+    }
