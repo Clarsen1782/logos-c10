@@ -36,7 +36,7 @@ inquirer
             const svg = new SVG();
             svg.setTextElement(answers.text, answers.color);
 
-            switch(answers.shape) {
+            switch (answers.shape) {
                 case 'Triangle':
                   const triangle = new Triangle();
                   triangle.setColor(answers.color2);
@@ -57,23 +57,26 @@ inquirer
                   return;
               }
             const svgRep = svg.render();
-            fs.writeFile(answers.filename, svgRep);
-            console.log(`SVG saved to ${answers.filename}`);  
+            fs.writeFile(answers.filename, svgRep, (Err) => Err? console.log(Err): console.log(`SVG saved to ${answers.filename}`))
+             
         })
     
   
     class SVG {
         constructor() {
-            this.textElement = ''
             this.shapeElement = ''
+            this.textElement = ''
         }
         render() {
-            return `<svg width="300" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">`
-        }
-        setTextElement(text,color) {
-            this.textElement = `<text x="100" y="75" font-size="50" text-anchor="middle" fill="${color}">${text}</text>`;
+            return `<svg width="300" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            ${this.shapeElement}
+            ${this.textElement}
+        </svg>`;
         }
         setShapeElement(shape) {
             this.shapeElement = shape.render()
+        }
+        setTextElement(text,color) {
+            this.textElement = `<text x="100" y="75" font-size="50" text-anchor="middle" fill="${color}">${text}</text>`;
         }
     }
