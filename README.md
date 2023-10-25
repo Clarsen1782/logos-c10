@@ -31,6 +31,7 @@ Next you can run the app with Node by typing in [node index.js]. Answer the cont
 4.	The logo is generated when you see “SVG saved to logo.svg (or the file name you entered).
 5.	Save the file to local storage to access it when needed.
 
+##### Logo Codes with inset of the generated logo
 
 <img src="./Assets/Circle.png" alt="Circle Logo Example and Code" width="400"/>
 <img src="./Assets/Square.png" alt="Square Logo Example and Code" width="400"/>
@@ -39,11 +40,11 @@ Next you can run the app with Node by typing in [node index.js]. Answer the cont
 
 ## Credits
 
-| Git | [https://git-scm.com/](https://git-scm.com/) |    
-| Javascript | [https://developer.mozilla.org/en-US/docs/Web/JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) |
-| jQuery | [https://jquery.com](https://jquery.com) |
-| Node.js | [https://nodejs.org/en](https://nodejs.org/en) |
-| Inquirer Version 8.2.4 | [https://www.npmjs.com/package/inquirer/v/8.2.4](https://www.npmjs.com/package/inquirer/v/8.2.4) |
+* Git - [https://git-scm.com/](https://git-scm.com/)    
+* Javascript - [https://developer.mozilla.org/en-US/docs/Web/JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* jQuery - [https://jquery.com](https://jquery.com)
+* Node.js - [https://nodejs.org/en](https://nodejs.org/en)
+* Inquirer Version 8.2.4 - [https://www.npmjs.com/package/inquirer/v/8.2.4](https://www.npmjs.com/package/inquirer/v/8.2.4)
 
 
 ## License
