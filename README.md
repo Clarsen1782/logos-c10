@@ -1,6 +1,6 @@
-#Simple Logo Generator with SVG
+# Simple Logo Generator with SVG
 
-Google Drive link to usage video: [https://drive.google.com/file/d/1OTfqMQZ_uwjDE1f3j-wkAyLt2dpVR5Tf/view](Logo-C10 Christina Larsen)
+Google Drive link to usage video: [Logo-C10 Christina Larsen](https://drive.google.com/file/d/1OTfqMQZ_uwjDE1f3j-wkAyLt2dpVR5Tf/view)
 
 ## Table of Contents (Optional)
 
