@@ -7,20 +7,22 @@ describe('Triangle', () => {
     });
     it('should render a valid SVG representation of a triangle', () => {
         const triangle = new Triangle();
+        triangle.setColor("blue");
         const svgRep = triangle.render();
-        expect(svgRep).toMatch(polygon points="150, 18 244, 182 56, 182" fill="${this.color}")
+        expect(svgRep).toMatch('polygon points="150, 18 244, 182 56, 182" fill="blue"')
     });
 });
 
 describe('Square', () => {
-    it('should create a Triangle object', () => {
+    it('should create a Square object', () => {
         const square = new Square();
         expect(square).toBeInstanceOf(Square);
     });
     it('should render a valid SVG representation of a square', () => {
         const square = new Square();
+        square.setColor("blue");
         const svgRep = square.render();
-        expect(svgRep).toMatch(rect width="200" height="200" fill="${this.color}")
+        expect(svgRep).toMatch('rect x="50" y="25" width="200" height="200" fill="blue"')
     });
 });
 
@@ -31,7 +33,8 @@ describe('Circle', () => {
     });
     it('should render a valid SVG representation of a circle', () => {
         const circle = new Circle();
+        circle.setColor("blue");
         const svgRep = circle.render();
-        expect(svgRep).toMatch(circle cx="50" cy="50" r="50" fill="${this.color}")
+        expect(svgRep).toMatch('circle cx="150" cy="100" r="90" fill="blue"')
     });
 });
